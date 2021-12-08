@@ -17,16 +17,18 @@ export const startRegisterWithEmailPasswordName = (email, password, name ) => {
 }
 
 export const startGoogleLogin = () => {
-    return (dispatch) => {
+    return ( dispatch ) => {
+
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
                 dispatch(
-                    login(user.uid, user.displayName)
+                    login( user.uid, user.displayName )
                 )
-                console.log(user)
-            })
+            });
+
     }
 }
+
 
 export const login = (uid, displayName) => ({
     
