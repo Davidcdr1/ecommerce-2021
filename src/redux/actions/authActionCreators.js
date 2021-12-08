@@ -28,12 +28,12 @@ export const startGoogleLogin = () => {
     }
 }
 
-export const login = (uid, displayName) => {
-    return {
+export const login = (uid, displayName) => ({
+    
         type: authActionTypes.LOGIN,
         payload: {
             uid,
             displayName
         }
-    }
-}
+    
+});
