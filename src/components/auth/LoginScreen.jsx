@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch } from 'react-redux';
-import { login, startGoogleLogin } from '../../redux/actions/authActionCreators';
+import { login, startGoogleLogin, startLoginEmailPassword } from '../../redux/actions/authActionCreators';
+import { NavBarGeneric } from '../NavbarGeneric';
 
 export const LoginScreen = () => {
 
@@ -17,7 +18,7 @@ export const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        dispatch( login ( 123456, 'david'))
+        dispatch( startLoginEmailPassword(email, password))
     };
 
     const handleLoginGoogle = () => {
@@ -25,7 +26,11 @@ export const LoginScreen = () => {
     }
 
     return (
-        <div>
+        <>
+        <NavBarGeneric/>
+        
+        <div className="auth__main">
+            <div className="auth__box-container">
             <h3 className="auth__title">Login</h3>
             <form onSubmit={handleLogin}>
                 <input
@@ -75,6 +80,8 @@ export const LoginScreen = () => {
             </form>
 
         </div>
+        </div>
+        </>
     )
 }
 

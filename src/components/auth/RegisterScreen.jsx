@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import validator from 'validator';
 import { removeError, setError } from '../../redux/actions/uiActionCreators';
 import { startRegisterWithEmailPasswordName } from '../../redux/actions/authActionCreators';
+import { NavBarGeneric } from '../NavbarGeneric';
 
 export const RegisterScreen = () => {
 
@@ -44,7 +45,13 @@ export const RegisterScreen = () => {
     }
 
     return (
-        <div>
+        
+        <>
+        <NavBarGeneric/>
+
+        
+        <div className="auth__main">
+            <div className="auth__box-container">
             <h3 className="auth__title">Register</h3>
             
                 
@@ -115,5 +122,8 @@ export const RegisterScreen = () => {
                     </Link>
             </form>
         </div>
+        </div>
+        
+        </>
     )
 }

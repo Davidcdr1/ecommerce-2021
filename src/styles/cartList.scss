@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Secular+One');
+
+
+.cont-cart {
+    width: 100%;
+    
+}
+
+.cart-titel  {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 15rem;
+    margin-bottom: -5rem;
+}
+
+.cart-titel h1 {
+    font-size: 48px;
+    font-family: "Fredoka One", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    
+}
+
+ .js-sticky-sidebar-nearby {
+    position: relative;
+    margin-left: 5rem;
+}
+
+#ip-wishlist-table, .shop_table {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.shop_table.cart th {
+    padding: 15px 0;
+    padding-left: 35px;
+    border-bottom: solid 1px var(--border-color);
+}
+.shop_table > thead > tr > th {
+    text-align: left;
+    font-weight: 400;
+}
+
+.shop_table.cart .product-quantity {
+    text-align: right;
+    padding-left: 129px;
+}
+
+
+.shop_table.cart th.product-subtotal {
+    text-align: right;
+}
+
+.product-thumbnail {
+    position: relative;
+    width: 75px;
+}
+
+.product-thumbnail img {
+    width: 75px;
+    height: 75px;
+}
+
+.product-name {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #b5b6b8;
+    font-size: 14px;
+    
+}
+
+.product-quantity {
+    color: #b5b6b8;
+    font-size: 14px;
+    margin-left:50px ;
+}
+
+.product-quantity th{
+    
+    margin-left:400px ;
+}
+
+.product-subtotal {
+    color: #b5b6b8;
+    font-size: 14px;
+}
+
+.product-name p {
+   
+    font-family: 'Secular One';
+    font-size: 18px;
+    color: #272f3d
+}
+
+.product-quantity .quantity {
+    display: inline-block;
+    position: relative;
+}
+
+.quantity input {
+    font-size: 18px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 25px;
+    line-height: 41px;
+    width: 90px;
+    vertical-align: middle;
+    margin-left: 153px;
+}
+
+.line {
+    border: solid 0.0001rem rgb(202, 202, 202);
+    width: 770px;
+    margin-bottom: 1rem;
+}
+
+
+.collaterals {
+    background: #F4F8FF;
+    padding: 0 25px;
+    line-height: 20px;
+    max-width: 425px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.MuiPaper-elevation1 {
+    box-shadow: none;
+}
+
+.product-subtotal {
+    margin-left: -4rem;
+}
+.subtotal-price {
+    margin-left: 120px;
+    font-family: 'Secular One';
+    font-size: 18px;
+    color: #272f3d
+}
+
+.total-title {
+    font-family: "Fredoka One", "Helvetica", "Arial", sans-serif;
+    font-size: 30px;
+    color: #272f3d
+}
+
+.total-items {
+    font-family: "Fredoka One";
+    font-size: 25px;
+}
+
+.total-price {
+    font-family: "Fredoka One";
+    color: red;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.btn-checkout button{
+    font-size: 20px;
+}
+
+
+
+
+					

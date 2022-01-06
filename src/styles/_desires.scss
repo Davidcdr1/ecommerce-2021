@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Secular+One');
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-2 {
+    width          : 100%;
+    display        : flex;
+    justify-content: end;
+    align-items    : center;
+    box-sizing     : border-box;
+    flex-wrap      : wrap;
+}
+
+
+.btn-checkout-d {
+    margin-left  : 10rem;
+    display      : flex;
+    margin-bottom: 2rem;
+
+}
+
+///////////////////////
+
+.cont-image-name {
+    display: flex;
+    
+    
+}
+
+.img-desire img{
+    width: 5rem;
+}
+
+.p-desire {
+    margin-top: 2rem;
+}
+
+.price-desire {
+    font-family: "Fredoka One";
+    color: red;
+    font-size: 23px;
+    margin-top: 2rem;
+
+}
+
+.btn-checkout {
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    display: flex;
+    
+    
+}
+

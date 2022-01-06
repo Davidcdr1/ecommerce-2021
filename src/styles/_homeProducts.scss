@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body.custom-background {
+    background-color: #6ecded;
+    background-image: url(https://parkofideas.com/kidz/demo2/wp-content/uploads/2018/10/clothes-2049536750.jpg);
+    background-position: left top;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+
+
+ .main-menu {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+
+ .main-menu {
+    height: 165px;
+    position: relative;
+}
+
+
+
+ .container-xl {
+    position: relative;
+    height: 100%;
+    background-color: white;
+    padding: 0px;
+}
+
+
+.products-categories {
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    width: 772px;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-logo {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    
+    
+}
+
+.icons-categories {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 30px;
+    position: relative;
+    text-align: center;
+}
+
+.heard-buttons {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    height: 28px;
+    margin-top: -14px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 10px;
+}
+
+.icons-buttons {
+    margin: 0 8px;
+}
+
+.cont-product {
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+    
+}
+
+.name-product {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif, sans-serif;
+    color:#404E40
+}
+
+.card-product {
+    width: 250px;
+    border:1px solid rgb(230, 229, 229);
+    margin-bottom:8px ;
+}
+
+.img-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MuiCardMedia-root {
+    
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.MuiTypography-root.name-product.MuiTypography-body1 {
+    font-family: 'Montserrat', sans-serif, sans-serif;
+    color: #404E40;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
