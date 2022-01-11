@@ -45,12 +45,28 @@ function DesiresList() {
       <NavBar/>
       <Header/>
     <Box sx={{ flexGrow: 1 }}>
+    <Grid container spacing={3}>
+        <Grid item xs={4}>
+          <Item>
+            <p style={{textAlign:"left"}}>Product</p>
+          </Item>
+        </Grid>
+        <Grid item xs={4}>
+          <Item>
+            <p style={{textAlign:"end"}}>Price</p>
+          </Item>
+        </Grid>
+        
+      </Grid>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3}
+       justifyContent="space-evenly"
+       
+     >
         {desiresItems && desiresItems.length > 0 ? (
           desiresItems.map((item) => (
             <>
-              <Grid item xs="auto">
+              <Grid item xs={4}>
                 <Item>
                 <div className="cont-image-name">
                 <IconButton aria-label="add to favorites" type="button" onClick={() => handleRemoveFromDesires(item)}>
@@ -67,17 +83,17 @@ function DesiresList() {
                 </div>
                 </Item>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Item>
                   <div className="price-desire">
-                  <p>{item.price}€</p>
+                  <p style={{textAlign:"end"}}>{item.price}€</p>
                   </div>
                
                 </Item>
               </Grid>
-              <Grid item xs>
+              <Grid item xs={4}>
                 <Item>
-                <div className="btn-checkout">
+                <div className="btn-checkout-desires">
                    <button  className="btn btn-danger" type="button" onClick={() => handleAddToCart(item)}>Add to cart</button>
                 </div>
                 </Item>

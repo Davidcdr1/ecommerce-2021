@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { db, storage } from "../firebase/firebase-config";
-import { addProduct, deleteProduct } from "../firebase/dbActionsCrud";
+import { addProduct, deleteProduct, updateProduct } from "../firebase/dbActionsCrud";
 import { NavBarGeneric } from "./NavbarGeneric";
 
 
@@ -9,8 +9,9 @@ import { NavBarGeneric } from "./NavbarGeneric";
 
 function AdminCrud () {
 
-//const [image, setImage] = useState("");
+
 const [progress, setProgress] = useState(0);
+const [isModify, setIsModify] = useState(false)
 
   const initialState = {
     name: "",
@@ -92,6 +93,19 @@ console.log(file)
     setProduct(initialState);
   }
 
+  function handleSelectProduct(item) {
+    console.log({item})
+    setProduct(item)
+    setIsModify(true)
+    console.log({product})
+  }
+
+  function handleUpdateProduct(product) {
+    updateProduct(product)
+    setProduct(initialState)
+    setIsModify(false)
+  }
+
   function handleDeleteProduct(productId) {
     deleteProduct(productId);
   }
@@ -120,7 +134,7 @@ console.log(file)
                   id="product-name"
                   placeholder="Product Name"
                   value={product.name}
-                  onChange={handleName}
+                  onChange={(event) => handleName(event)}
                 />
               </div>
               <div>
@@ -129,7 +143,7 @@ console.log(file)
                   id="product-desc"
                   placeholder="Description"
                   value={product.description}
-                  onChange={handleDescription}
+                  onChange={(event) =>handleDescription(event)}
                 />
               </div>
               <div>
@@ -138,7 +152,7 @@ console.log(file)
                   id="product-price"
                   placeholder="Price"
                   value={product.price}
-                  onChange={handlePrice}
+                  onChange={(event) =>handlePrice(event)}
                 />
               </div>
               
@@ -153,9 +167,18 @@ console.log(file)
               </div>
               
               <div>
-                <button className="button-admin" type="button" onClick={() => handleAddProduct(product)}>
-                  Add product
-                </button>
+                {
+                  isModify ? (
+                    <button className="button-admin" type="button" onClick={() => handleUpdateProduct(product)}>
+                      Update product
+                    </button>
+                  ) : (
+                      <button className="button-admin" type="button" onClick={() => handleAddProduct(product)}>
+                        Add product
+                      </button>)
+                }
+                
+                
               </div>
             </div>
 
@@ -174,7 +197,9 @@ console.log(file)
                     <h3>{item.name}</h3>
                     <h5 className="description">{item.description}</h5>
                     <h5>{item.price}€</h5>
-                    <button onClick={() => handleDeleteProduct(item.id)}>delete</button>
+                    <button className="btn btn-success" onClick={() => handleSelectProduct(item)}>modify</button>
+                    <button className="btn btn-danger" onClick={() => handleDeleteProduct(item.id)}>delete</button>
+
                   </div>
                 ))}
             </div>

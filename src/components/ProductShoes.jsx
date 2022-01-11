@@ -69,10 +69,12 @@ export const ProductShoes = () => {
     // suscription to Firebase Database (to checking changes)
     db.collection("productsshoes").onSnapshot((results) => {
       const productsShoes = [];
+      
       results.forEach((productb) => {
         productsShoes.push({ id: productb.id, ...productb.data() });
       });
       setProductShoesList(productsShoes);
+  
     });
   }, []);
 
@@ -124,7 +126,7 @@ export const ProductShoes = () => {
       alt="Paella dish"
       >
         
-      {/* <img src={item.image} style={{ width: "10rem" }}></img> */}
+      
       </CardMedia>
        
         </IconButton>
@@ -157,13 +159,22 @@ export const ProductShoes = () => {
           aria-expanded={expanded}
           aria-label="show more"
         >
+          
           <ExpandMoreIcon />
+          
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          
-        </CardContent>
+        
+        { item?.sizes?.map((currentSize) => (
+          <CardContent>
+          <div>
+            <p>{currentSize.size}</p>
+          </div>
+          </CardContent>
+        ))
+       }
+        
       </Collapse>
      
     </Card>

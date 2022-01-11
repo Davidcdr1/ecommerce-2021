@@ -1,11 +1,12 @@
 import { db } from "./firebase-config";
 
 export async function addProduct(product) {
-  // example usind ADD
-  // await db.collection("projects").add(project);
-
-  // example usind SET
   await db.collection("products").doc().set(product);
+}
+
+export async function updateProduct(product) {
+  console.log(product.id)
+  await db.collection("products").doc(product.id).set(product);
 }
 
 // export async function loadProducts() {

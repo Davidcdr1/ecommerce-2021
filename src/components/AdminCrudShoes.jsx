@@ -6,23 +6,32 @@ import { NavBarGeneric } from "./NavbarGeneric";
 
 function AdminCrudShoes() {
 
-  
+
   const [progress, setProgress] = useState(0);
-  
+
   const initialState = {
     name: "",
     description: "",
     price: 0,
     image: "",
-    size: {s:23,
-      state: false}
+    sizes: [
+      { size: 23, state: false },
+      { size: 24, state: false },
+      { size: 25, state: false },
+      { size: 26, state: false },
+      { size: 27, state: false },
+      { size: 28, state: false },
+      { size: 29, state: false },
+      { size: 30, state: false },
+
+    ]
 
   };
 
   const [productb, setProductB] = useState(initialState);
   const [productShoesList, setProductShoesList] = useState([]);
-  
- 
+
+
 
 
   function handleName(event) {
@@ -31,7 +40,7 @@ function AdminCrudShoes() {
       description: productb.description,
       price: productb.price,
       image: productb.image,
-      size: productb.size
+      sizes: productb.sizes
     });
   }
 
@@ -41,7 +50,7 @@ function AdminCrudShoes() {
       description: event.target.value,
       price: productb.price,
       image: productb.image,
-      size: productb.size
+      sizes: productb.sizes
     });
   }
 
@@ -51,19 +60,28 @@ function AdminCrudShoes() {
       description: productb.description,
       price: event.target.value,
       image: productb.image,
-      size: productb.size
+      sizes: productb.sizes
     });
   }
 
   function handleSize(event) {
+
+    const tempSize = productb.sizes;
+    tempSize.forEach(product => {
+
+      if (product.size === +event.target.id) {
+        product.state = event.target.checked
+      }
+    })
     setProductB({
       name: productb.name,
       description: productb.description,
       image: productb.image,
       price: productb.price,
-      size: event.target.value
+      sizes: tempSize
     });
-    console.log(event)
+    console.log(productb)
+
   }
 
   function handleImage(event) {
@@ -96,7 +114,7 @@ function AdminCrudShoes() {
               description: productb.description,
               price: productb.price,
               image: url,
-              size: productb.size
+              sizes: productb.sizes
             }
             ))
         }
@@ -116,9 +134,11 @@ function AdminCrudShoes() {
     // suscription to Firebase Database (to checking changes)
     db.collection("productsshoes").onSnapshot((results) => {
       const productsShoes = [];
+      
       results.forEach((productb) => {
         productsShoes.push({ id: productb.id, ...productb.data() });
       });
+      
       setProductShoesList(productsShoes);
     });
   }, []);
@@ -167,16 +187,23 @@ function AdminCrudShoes() {
             />
 
           </div>
-          <div>
 
-            <input
-              value={productb.size.s}
-              id="product-size"
-              onChange={(event) => handleSize(event)}
-              type="checkbox"
-            />
-            <label for="product-size">23</label>
-          </div>
+          {
+            productb?.sizes?.map(product => (
+              <div>
+
+                <label htmlFor={product.size}>
+                  <input
+                    checked={product.state}
+                    id={product.size}
+                    onChange={(event) => handleSize(event)}
+                    type="checkbox"
+                  />
+                  {product.size}</label>
+              </div>
+            ))
+          }
+
 
           <div>
             <button className="button-admin" type="button" onClick={() => handleAddProduct(productb)}>
@@ -200,8 +227,32 @@ function AdminCrudShoes() {
                 <h3>{item.name}</h3>
                 <h5 className="description">{item.description}</h5>
                 <h5>{item.price}€</h5>
-                <h5>{item.size}</h5>
-                 
+                <div className="cont-sizes">
+                <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                            Sizes
+                          </button>
+               
+                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#"> {
+                  item?.sizes?.map((currentSize) =>
+                    currentSize.state === true && (
+                       <> 
+                       {currentSize.size}
+                       <br/>
+                       </>
+                        
+                        ))
+                       
+                      }
+                      
+                       </a>
+                    </div>
+
+                
+                 </div>
+                  </div>
+
                 <button onClick={() => handleDeleteProduct(item.id)}>delete</button>
               </div>
             ))}
