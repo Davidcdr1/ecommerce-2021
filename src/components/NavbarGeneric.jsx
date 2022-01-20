@@ -22,7 +22,7 @@ export const NavBarGeneric = () => {
 
                         </Link>
 
-                        <div class="dropdown">
+                        {/* <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                                 Admin
                             </button>
@@ -43,7 +43,7 @@ export const NavBarGeneric = () => {
                                      <a class="dropdown-item" href="##">Admin Shoes</a>
                                 </Link>
                             </div>
-                            </div>
+                            </div> */}
 
 
                         <form class="form-inline">
