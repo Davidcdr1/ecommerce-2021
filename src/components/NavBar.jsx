@@ -12,7 +12,7 @@ export const NavBar = () => {
                     <Link to="/">
                         <span class="navbar-brand">HOME</span>
                     </Link>
-                    <div class="dropdown">
+                    {/* <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                             Admin
                         </button>
@@ -33,7 +33,7 @@ export const NavBar = () => {
                                 <a class="dropdown-item" href="##">Admin Shoes</a>
                             </Link>
                         </div>
-                    </div>
+                    </div> */}
                     <form class="form-inline">
                         <FontAwesomeIcon style={{ fontSize: "1.2rem", color: 'white' }} icon={faUser} />
                         <Link
