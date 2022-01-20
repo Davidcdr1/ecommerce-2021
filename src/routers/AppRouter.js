@@ -1,40 +1,78 @@
-// import React from "react";
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route,
-// } from "react-router-dom";
-// import { LoginScreen } from '../components/auth/LoginScreen';
-// import { RegisterScreen } from '../components/auth/RegisterScreen';
-// import { Product } from '../components/Product';
-// import { NavBar } from "../components/NavBar";
-// import AdminCrud from "../components/AdminCrud";
-// import Header from '../components/Header';
+import React, { useEffect, useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Redirect
+  } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+
+import { firebase } from '../firebase/firebase-config'
+import { AuthRouter } from './AuthRouter';
+import { PrivateRoute } from './PrivateRoute';
+
+import { JournalScreen } from '../components/journal/JournalScreen';
+import { login } from '../actions/auth';
+import { PublicRoute } from './PublicRoute';
+
+export const AppRouter = () => {
+
+    const dispatch = useDispatch();
+
+    const [ checking, setChecking ] = useState(true);
+    const [ isLoggedIn, setIsLoggedIn ] = useState(false);
 
 
 
+    useEffect(() => {
+
+	firebase.auth().onAuthStateChanged( (user) => {
+
+            if ( user?.uid ) {
+                dispatch( login( user.uid, user.displayName ) );
+                setIsLoggedIn( true );
+            } else {
+                setIsLoggedIn( false );
+            }
+
+            setChecking(false);
+
+        });
+
+    }, [ dispatch, setChecking, setIsLoggedIn ])
 
 
-// export const AppRouter = () => {
-//     return (
-//         <>
-//         <Router>
-            
-//             <main>
-//                 <Switch>
-//                     <Route path="/" exact component={Product} />
-//                     <Route path="/admin" exact component={AdminCrud} />
-//                     <div className="auth__main">
-//                         <div className="auth__box-container">
-//                             <Route path="/auth/login" exact component={LoginScreen} />
-//                             <Route path="/auth/register" exact component={RegisterScreen} />
-//                         </div>
-//                     </div>
-//                 </Switch>
+    if ( checking ) {
+	return (
+            <h1>Espere...</h1>
+	)
+    }
 
-//             </main>
-//         </Router>
-        
-//         </>
-//     )
-// }
+
+    return (
+        <Router>
+            <div>
+	        <Switch>
+                    <PublicRoute
+                        path="/auth"
+                        component={ AuthRouter }
+                        isAuthenticated={ isLoggedIn }
+                    />
+
+                    <PrivateRoute
+			exact
+                        isAuthenticated={ isLoggedIn }
+			path="/"
+                        component={ JournalScreen }
+                    />
+
+                    <Redirect to="/auth/login" />
+
+
+	        </Switch>
+            </div>
+	</Router>
+    )
+}
+
+

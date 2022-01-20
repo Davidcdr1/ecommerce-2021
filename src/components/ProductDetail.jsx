@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
-import IconButton from '@material-ui/core/IconButton';
 import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import { styled } from '@material-ui/core/styles';
@@ -31,6 +29,7 @@ function ProductDetail() {
     dispatch(addToCart({
       description: item.description,
       id: item.id,
+      name: item.name,
       image: item.image,
       price: item.price,
       size: selectSize
@@ -42,8 +41,6 @@ function ProductDetail() {
     console.log(option.value)
   }
 
-
-
   return (
     <>
       <NavBar />
@@ -53,67 +50,50 @@ function ProductDetail() {
           <div className="cont-detail-product">
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2}>
-
-
-                
-                  
-                    
-                      <Grid item xs={8}>
-
-                        <Item>
-                          <img src={detailsItem.image} style={{ width: "25rem" }} />
-
-                        </Item>
-                      </Grid>
-
-
-
-
-                      <Grid item xs={4}>
-                        <Item>
-                          <div className="product-name-detail">
-                            {detailsItem.name}
-                          </div>
-                          <div className="product-description">
-                            {detailsItem.description}
-                          </div>
-                          {
-                            detailsItem?.sizes && (
-                              <>
-                            <form>
-                              <label>
-                                Pick your size:
-
-                                <Select
-                                  
-                                  options={detailsItem?.sizes
-                                    .filter(currentSize => currentSize.state === true)
-                                    .map((currentSize) => {
-                                      return { label: currentSize.size, value: currentSize.size }
-                                    })
-                                  }
-                                  onChange={selectChange}
-                                />
-
-                              </label>
-                            </form>
-                          </>
-                            )
-                          }
-                          
-
-                          <div className="total-price" >
-                            {detailsItem.price}€
-                          </div>
-                          <div className="btn-checkout">
-
-                            <button disabled={!selectSize} className="btn btn-danger" type="button" onClick={() => handleAddToCart(detailsItem)}>Add to cart</button>
-                          </div>
-                        </Item>
-                      </Grid>
-                  
+                <Grid item xs={8}>
+                  <Item>
+                    <div className="img-detail">
+                      <img src={detailsItem.image} />
+                    </div>
+                  </Item>
+                </Grid>
+                <Grid item xs={4}>
+                  <Item>
+                    <div className="product-name-detail">
+                      {detailsItem.name}
+                    </div>
+                    <div className="product-description">
+                      {detailsItem.description}
+                    </div>
+                    {
+                      detailsItem?.sizes && (
+                        <>
+                          <form>
+                            <label>
+                              Pick your size:
+                              <Select
+                                options={detailsItem?.sizes
+                                  .filter(currentSize => currentSize.state === true)
+                                  .map((currentSize) => {
+                                    return { label: currentSize.size, value: currentSize.size }
+                                  })
+                                }
+                                onChange={selectChange}
+                              />
+                            </label>
+                          </form>
+                        </>
+                      )
+                    }
+                    <div className="total-price" >
+                      {detailsItem.price}€
+                    </div>
+                    <div className="btn-checkout">
+                      <button disabled={!selectSize} className="btn btn-danger" type="button" onClick={() => handleAddToCart(detailsItem)}>Add to cart</button>
+                    </div>
+                  </Item>
+                </Grid>
               </Grid>
-
             </Box>
           </div>
         </div>
@@ -122,8 +102,6 @@ function ProductDetail() {
     </>
   );
 }
-
-
 export default ProductDetail
 
 

@@ -2,10 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Secular+One');
 
 
-.cont-cart {
-    width: 100%;
-    
-}
+
 
 .cart-titel  {
     
@@ -13,8 +10,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 15rem;
-    margin-bottom: -5rem;
+    margin-top: 3rem;
+     margin-bottom: 5rem;
 }
 
 .cart-titel h1 {
@@ -24,49 +21,6 @@
     
 }
 
- .js-sticky-sidebar-nearby {
-    position: relative;
-    margin-left: 5rem;
-}
-
-#ip-wishlist-table, .shop_table {
-    width: 100%;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.shop_table.cart th {
-    padding: 15px 0;
-    padding-left: 35px;
-    border-bottom: solid 1px var(--border-color);
-}
-.shop_table > thead > tr > th {
-    text-align: left;
-    font-weight: 400;
-}
-
-.shop_table.cart .product-quantity {
-    text-align: right;
-    padding-left: 129px;
-}
-
-
-.shop_table.cart th.product-subtotal {
-    text-align: right;
-}
-
-.product-thumbnail {
-    position: relative;
-    width: 75px;
-}
-
-.product-thumbnail img {
-    width: 75px;
-    height: 75px;
-}
 
 .product-name {
     padding-left: 20px;
@@ -76,16 +30,6 @@ table {
     
 }
 
-.product-quantity {
-    color: #b5b6b8;
-    font-size: 14px;
-    margin-left:50px ;
-}
-
-.product-quantity th{
-    
-    margin-left:400px ;
-}
 
 .product-subtotal {
     color: #b5b6b8;
@@ -99,41 +43,40 @@ table {
     color: #272f3d
 }
 
-.product-quantity .quantity {
-    display: inline-block;
-    position: relative;
+.product-name1 {
+    font-family: 'Secular One';
+    color: #272f3d;
+    font-size: 18px;
 }
 
-.quantity input {
-    font-size: 18px;
-    border-radius: 4px;
-    text-align: center;
-    padding: 0 25px;
-    line-height: 41px;
-    width: 90px;
-    vertical-align: middle;
-    margin-left: 153px;
+.product-name1 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    margin-top: -2rem;
+    }
 }
+
+.product-name1 {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    margin-top: 2.5rem;
+    }
+}
+
+
 
 .line {
     border: solid 0.0001rem rgb(202, 202, 202);
     width: 770px;
     margin-bottom: 1rem;
+    margin-left: 0.7rem;
+}
+
+.line {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    width:250px;
+    }
 }
 
 
-.collaterals {
-    background: #F4F8FF;
-    padding: 0 25px;
-    line-height: 20px;
-    max-width: 425px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.MuiPaper-elevation1 {
-    box-shadow: none;
-}
 
 .product-subtotal {
     margin-left: -4rem;
@@ -143,6 +86,22 @@ table {
     font-family: 'Secular One';
     font-size: 18px;
     color: #272f3d
+}
+
+.subtotal-price{
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        margin-left: 0px;
+        margin-top: -1rem;
+    }
+
+}
+
+.subtotal-price{
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        margin-left: 0px;
+        margin-top: 5rem;
+    }
+
 }
 
 .total-title {
@@ -167,7 +126,120 @@ table {
     font-size: 20px;
 }
 
+.empty{
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    
+}
 
+
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-3 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        flex-direction : column;
+        
+    }
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-2 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    }
+}
+
+.cont-image-name {
+    display: flex;
+    align-items: center;
+}
+
+.cont-image-name {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   
+    
+}
+}
+.cont-image-name {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+}
+
+.titel-psp p{
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        color: white;
+        margin-top: -5rem;
+    }
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        color: white;
+    }
+
+}
+
+.MuiGrid-container {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        align-items: center;
+    }
+}
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6.MuiGrid-grid-md-4 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        max-width: 100%;
+    }
+}
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6.MuiGrid-grid-md-8 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        max-width: 100%;
+    }
+}
+
+
+
+.line-total {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        width:250px;
+        border: solid 0.0001rem rgb(202, 202, 202);
+        margin-bottom: 1rem;
+        margin-left: 0.7rem;
+        
+    }
+}
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6.MuiGrid-grid-md-4 {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        flex-direction: column;
+    }
+
+}
+
+.MuiGrid-grid-xs-6 {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        max-width: 100%;
+    }
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-2 {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    max-width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+}
 
 
 					

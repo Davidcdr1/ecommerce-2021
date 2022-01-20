@@ -1,76 +1,92 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body.custom-background {
-    background-color: #6ecded;
-    background-image: url(https://parkofideas.com/kidz/demo2/wp-content/uploads/2018/10/clothes-2049536750.jpg);
-    background-position: left top;
-    background-size: auto;
-    background-repeat: no-repeat;
+    background-color     : #6ecded;
+    background-image     : url(https://parkofideas.com/kidz/demo2/wp-content/uploads/2018/10/clothes-2049536750.jpg);
+    background-position  : left top;
+    background-size      : auto;
+    background-repeat    : no-repeat;
     background-attachment: scroll;
 }
 
 
 
- .main-menu {
-    opacity: 1;
+.main-menu {
+    opacity   : 1;
     transition: opacity 0.2s linear;
 }
 
- .main-menu {
-    height: 165px;
+.main-menu {
+    height  : 165px;
     position: relative;
 }
 
 
 
- .container-xl {
-    position: relative;
-    height: 100%;
+.container-xl {
+    position        : relative;
+    height          : 100%;
     background-color: white;
-    padding: 0px;
+    padding         : 0px;
 }
 
 
 .products-categories {
-    position: absolute;
-    left: 50%;
-    top: 45px;
-    width: 772px;
-    transform: translateX(-50%);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 1rem;
 }
 
-.cont-logo {
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    
-    
+.cont-categories {
+    margin-left: 11rem;
 }
+
+
 
 .icons-categories {
-    display: inline-block;
+    display       : inline-block;
     vertical-align: top;
-    margin: 0 30px;
-    position: relative;
-    text-align: center;
+    margin        : 0 30px;
+    position      : relative;
+    text-align    : center;
 }
 
 .heard-buttons {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    height: 28px;
-    margin-top: -14px;
+    margin-right: 6rem;
     display: flex;
-    align-items: center;
     list-style: none;
-    margin-right: 10px;
+    justify-content: end;
+    margin-top: 2rem;
+    margin-left: 8rem;
+}
+
+.navbar-nav {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.navbar-nav {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-left: -2rem;
+    }
+}
+.heard-buttons {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px){
+        margin-left: 0px;
+    }
+}
+
+.heard-buttons {
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        margin-left: 0px;
+    }
 }
 
 .icons-buttons {
@@ -78,44 +94,82 @@ body.custom-background {
 }
 
 .cont-product {
-    display:flex;
+    display        : flex;
     justify-content: center;
-    margin-top: 1rem;
-    
+    margin-top     : 1rem;
+
 }
 
 .name-product {
-    font-size: 16px;
+    font-size  : 16px;
     font-family: 'Montserrat', sans-serif, sans-serif;
-    color:#404E40
+    color      : #404E40
 }
 
 .card-product {
-    width: 250px;
-    border:1px solid rgb(230, 229, 229);
-    margin-bottom:8px ;
+    width        : 250px;
+    border       : 1px solid rgb(230, 229, 229);
+    margin-bottom: 8px;
 }
 
 .img-product {
-    display: flex;
+    display        : flex;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
+    max-width: 100%;
 }
 
 .MuiCardMedia-root {
-    
-    display: flex;
-    justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+
+    display            : flex;
+    justify-content    : center;
+    background-size    : cover;
+    background-repeat  : no-repeat;
     background-position: center;
 }
 
 .MuiTypography-root.name-product.MuiTypography-body1 {
     font-family: 'Montserrat', sans-serif, sans-serif;
-    color: #404E40;
-    font-size: 20px;
+    color      : #404E40;
+    font-size  : 20px;
     font-weight: bold;
-    
+
 }
 
+.MuiPaper-elevation1 {
+    box-shadow: none;
+}
+
+.row {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        flex-direction : column;
+        align-content  : center;
+        justify-content: center;
+        align-items    : center;
+
+    }
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        margin-left: -5px;
+    }
+
+  
+}
+
+.col-3 {
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        max-width  : 100%;
+       
+
+    }
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        
+        flex         : 0 0 25%;
+        max-width    : 33%;
+        width        : 100%;
+        padding-right: 15px;
+        padding-left : 15px;
+
+
+    }
+}

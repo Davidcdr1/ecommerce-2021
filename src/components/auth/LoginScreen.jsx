@@ -28,7 +28,7 @@ export const LoginScreen = () => {
     return (
         <>
         <NavBarGeneric/>
-        
+        <div className="container-xl">
         <div className="auth__main">
             <div className="auth__box-container">
             <h3 className="auth__title">Login</h3>
@@ -79,6 +79,7 @@ export const LoginScreen = () => {
                 </Link>
             </form>
 
+        </div>
         </div>
         </div>
         </>

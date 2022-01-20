@@ -149,6 +149,9 @@ function AdminCrudShoes() {
     <>
       <NavBarGeneric />
       <div className="App">
+      <div style={{ textAlign: 'center'}}>
+        <h1>Admin Shoes</h1>
+      </div>
         <div className="project--form">
           <div>
             <input

@@ -1,5 +1,9 @@
 import React from 'react';
-import kids2 from '../img/kids2.jpeg'
+import kids2 from '../img/kids2.jpeg';
+import { Link } from "react-router-dom";
+import facebook from '../img/facebook.png';
+import instagram from '../img/instagram.png';
+import git from '../img/github.png'
 
 function Footer() {
     return (
@@ -11,27 +15,35 @@ function Footer() {
       <img src={kids2} style={{ width: "5rem" }}/>
 
         <p class="footer-links">
-          <a href="#">Home</a>
+          <Link to='/'>
+           <a href="#">Home</a>
+          </Link>
           ·
+          <Link to='/productbabyes'>
           <a href="#">Babies</a>
+          </Link>
           ·
+          <Link to='/productboys'>
           <a href="#">Boys</a>
+          </Link>
           ·
+          <Link to='/productgirls'>
           <a href="#">Girls</a>
+          </Link>
           ·
+          <Link to='/productshoes'>
           <a href="#">Shoes</a>
-          
+          </Link>
           
         </p>
 
-        <p class="footer-company-name">Company Name © 2015</p>
+        <p class="footer-company-name">Kids Shop S.L by David Cuenca © 2022</p>
 
         <div class="footer-icons">
 
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
+          <a href={"https://github.com/Davidcdr1"}><img src={facebook} style={{ width: "2rem" }}></img></a>
+          <a href="#"><i class="fa fa-twitter"><img src={instagram} style={{ width: "2rem" }}></img></i></a>
+          <a href="https://github.com/Davidcdr1"><i class="fa fa-github"><img src={git} style={{ width: "2rem" }}></img></i></a>
 
         </div>
 

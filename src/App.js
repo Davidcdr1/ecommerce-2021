@@ -1,8 +1,5 @@
 import { Provider } from "react-redux";
 import store from "./redux/stores";
-import { AppRouter } from "./routers/AppRouter";
-import { NavBar } from "./components/NavBar";
-import Header from "./components/Header";
 import {
   BrowserRouter as Router,
   Switch,
@@ -43,8 +40,8 @@ function App() {
           <Route path="/adminbabyes" exact component={AdminCrudBabyes} />
           <Route path="/admingirls" exact component={AdminCrudGirls} />
           <Route path="/adminshoes" exact component={AdminCrudShoes} />
-              <Route path="/auth/login" exact component={LoginScreen} />
-              <Route path="/auth/register" exact component={RegisterScreen} />
+          <Route path="/auth/login" exact component={LoginScreen} />
+          <Route path="/auth/register" exact component={RegisterScreen} />
         </Switch>
       </Router>
     </Provider>
