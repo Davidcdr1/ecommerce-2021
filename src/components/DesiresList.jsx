@@ -101,7 +101,7 @@ function DesiresList() {
                           <DeleteForeverOutlinedIcon />
                         </IconButton>
                         <div className="img-desire">
-                          <img src={item.image} />
+                          <img src={item.image} alt="item-desire"/>
                         </div>
                         <div className="product-name">
                           <p className="p-desire">{item.name}</p>
@@ -133,7 +133,7 @@ function DesiresList() {
                   <Grid item xs={4}>
                     <Item>
                       <div className="btn-checkout-desires">
-                        <button className="btn btn-danger" type="button" onClick={() => handleAddToCart(item)}><img src={shopping} style={{ width: "1.5rem", marginRight: '0.5rem', marginTop: '-0.5rem' }}></img>Add to cart</button>
+                        <button className="btn btn-danger" type="button" onClick={() => handleAddToCart(item)}><img src={shopping} style={{ width: "1.5rem", marginRight: '0.5rem', marginTop: '-0.5rem' }} alt="checkout"></img>Add to cart</button>
                       </div>
                     </Item>
                   </Grid>
@@ -146,7 +146,7 @@ function DesiresList() {
                 <Item>
                   <div className="empty-desires">
                     <h4 className="text-danger2">The List is empty</h4>
-                    <img src={empty} style={{ width: "15rem" }}></img>
+                    <img src={empty} style={{ width: "15rem" }} alt="list-empty"></img>
                   </div>
                 </Item>
               </Grid>

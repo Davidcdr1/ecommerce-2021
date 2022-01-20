@@ -10,7 +10,7 @@ export const NavBar = () => {
             <div className="container-xl">
                 <nav class="navbar navbar-dark bg-dark" style={{ marginBottom: "1rem" }}>
                     <Link to="/">
-                        <a class="navbar-brand">HOME</a>
+                        <span class="navbar-brand">HOME</span>
                     </Link>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
@@ -18,19 +18,19 @@ export const NavBar = () => {
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <Link to="/admin">
-                                <a class="dropdown-item" href="#">Admin Home</a>
+                                <a class="dropdown-item" href="##">Admin Home</a>
                             </Link>
                             <Link to="/adminboys">
-                                <a class="dropdown-item" href="#">Admin Boys</a>
+                                <a class="dropdown-item" href="##">Admin Boys</a>
                             </Link>
                             <Link to="/adminbabyes">
-                                <a class="dropdown-item" href="#">Admin Babyes</a>
+                                <a class="dropdown-item" href="##">Admin Babyes</a>
                             </Link>
                             <Link to="/admingirls">
-                                <a class="dropdown-item" href="#">Admin Girls</a>
+                                <a class="dropdown-item" href="##">Admin Girls</a>
                             </Link>
                             <Link to="/adminshoes">
-                                <a class="dropdown-item" href="#">Admin Shoes</a>
+                                <a class="dropdown-item" href="##">Admin Shoes</a>
                             </Link>
                         </div>
                     </div>

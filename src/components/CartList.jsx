@@ -30,7 +30,7 @@ function CartList() {
     color: theme.palette.text.secondary,
     boxShadow: 'none',
     margin: '0',
-    padding: '0',
+    
 
   }));
 
@@ -96,7 +96,7 @@ function CartList() {
                               <IconButton aria-label="add to favorites" type="button" onClick={() => handleRemoveFromCart(item)}>
                                 <DeleteForeverOutlinedIcon />
                               </IconButton>
-                              <img style={{ width: "5rem" }} src={item.image} />
+                              <img style={{ width: "5rem" }} src={item.image} alt="item" />
                               <div className="product-name">
                                 <p>{item.name}</p>
                               </div>
@@ -127,7 +127,7 @@ function CartList() {
                       <Item>
                         <div className="empty">
                           <h4 className="text-danger2">The Cart is empty</h4>
-                          <img src={empty} style={{ width: "15rem" }}></img>
+                          <img src={empty} style={{ width: "15rem" }} alt="empty-cart"></img>
                         </div>
                       </Item>
                     </Grid>

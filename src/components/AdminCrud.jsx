@@ -242,7 +242,7 @@ function AdminCrud() {
                       Sizes
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#"> {
+                      <a class="dropdown-item" href="##"> {
                         item?.sizes?.map((currentSize) =>
                           currentSize.state === true && (
                             <>

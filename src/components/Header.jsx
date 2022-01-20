@@ -19,9 +19,9 @@ function Header() {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light white-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="##">
           <div className="cont-logo">
-            <img src={kids2} style={{ width: "5rem" }}></img>
+            <img src={kids2} style={{ width: "5rem" }} alt="kids"></img>
           </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,50 +31,50 @@ function Header() {
           <div className="cont-categories">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="##">
                   <Link to='/productbabyes'>
                     <li className="icons-categories">
-                      <a href="#"><img src={dummy} style={{ width: "4rem" }}></img></a>
+                      <a href="##"><img src={dummy} style={{ width: "4rem" }} alt="dummy"></img></a>
                       <p>babyes</p>
                     </li>
                   </Link>
                   <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="##">
                   <Link to='/productboys'>
                     <li className="icons-categories">
-                      <a href="#"><img src={boy} style={{ width: "4rem" }}></img></a>
+                      <a href="##"><img src={boy} style={{ width: "4rem" }} alt="boy"></img></a>
                       <p>boys</p>
                     </li>
                   </Link></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="##">
                   <Link to='/productgirls'>
                     <li className="icons-categories">
-                      <a href="#"><img src={girl} style={{ width: "4rem" }}></img></a>
+                      <a href="##"><img src={girl} style={{ width: "4rem" }} alt="girl"></img></a>
                       <p>girls</p>
                     </li>
                   </Link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="##">
                   <Link to='/productshoes'>
                     <li className="icons-categories">
-                      <a href="#"><img src={shoes} style={{ width: "4rem" }}></img></a>
+                      <a href="##"><img src={shoes} style={{ width: "4rem" }} alt="shoes"></img></a>
                       <p>shoes</p>
                     </li>
                   </Link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="##">
                   <div className="heard-buttons">
                     <li className="icons-buttons">
                       <Link to="/desires">
-                        <a href="#"><img src={heart} style={{ width: "1.5rem" }}></img></a>
+                        <a href="##"><img src={heart} style={{ width: "1.5rem" }} alt="heartr"></img></a>
                         {
                           desiresItems.length > 0 && (
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ color: "white", marginTop: "-7px", width: "1.5rem" }}>
@@ -87,7 +87,7 @@ function Header() {
                     </li>
                     <li className="icons-buttons">
                       <Link to="/cart">
-                        <a href="#"><img src={cart} style={{ width: "1.5rem", marginLeft: "0.5rem" }}></img></a>
+                        <a href="##"><img src={cart} style={{ width: "1.5rem", marginLeft: "0.5rem" }} alt="cart"></img></a>
                         {
                           cartItems.length > 0 && (
 

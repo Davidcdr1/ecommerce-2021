@@ -53,7 +53,7 @@ function ProductDetail() {
                 <Grid item xs={8}>
                   <Item>
                     <div className="img-detail">
-                      <img src={detailsItem.image} />
+                      <img src={detailsItem.image} alt="details"/>
                     </div>
                   </Item>
                 </Grid>
